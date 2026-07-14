@@ -1,0 +1,24 @@
+{
+  "name": "سيد العزازي - 150 اداة AI",
+  "short_name": "العزازي AI",
+  "description": "150 اداة ذكاء اصطناعي مجانية 100% - براند سيد العزازي",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#04100C",
+  "theme_color": "#0A4D3C",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
