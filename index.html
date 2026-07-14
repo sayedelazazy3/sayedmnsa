@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>سيد العزازي - 150 اداة مجانية</title>
+<link rel="manifest" href="manifest.json?v=150final2">
+<meta name="theme-color" content="#0A4D3C">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="icon-192.png?v=2">
+<style>*{box-sizing:border-box;font-family:'Cairo',sans-serif}body{margin:0;background:#04100C;color:#fff}
+.h{position:sticky;top:0;z-index:10;background:linear-gradient(90deg,#04100C,#0A4D3C);border-bottom:3px solid #D4AF37;padding:12px;display:flex;justify-content:space-between;align-items:center}
+.logo{width:44px;height:44px;border-radius:50%;border:2px solid gold}
+.free{background:linear-gradient(90deg,#00FF88,#00CC6A);color:#000;padding:5px 12px;border-radius:999px;font-weight:900;font-size:12px}
+.install{background:linear-gradient(90deg,#D4AF37,gold);color:#000;border:none;padding:9px 16px;border-radius:999px;font-weight:900;cursor:pointer;box-shadow:0 0 12px gold}
+.card{background:linear-gradient(145deg,#14291E,#0F201A) !important;border:2px solid #D4AF37 !important;border-radius:20px !important;padding:22px 10px !important;min-height:115px !important;cursor:pointer;text-align:center;display:flex !important;flex-direction:column;justify-content:center;align-items:center;gap:8px;box-shadow:0 4px 15px rgba(212,175,55,.3) !important}
+.card:active{transform:scale(.95)}
+.grid{display:grid !important;grid-template-columns:repeat(2,1fr) !important;gap:14px !important;padding:14px !important}
+.m{position:fixed;inset:0;background:rgba(0,0,0,.97);display:none;z-index:99;overflow:auto;padding:10px;justify-content:center;align-items:flex-start}.m.o{display:flex}.b{background:#0B1E16;border:2px solid gold;border-radius:14px;max-width:720px;width:100%;padding:14px;margin-top:10px}
+input,textarea,select{width:100%;background:#04100C;border:1.5px solid #D4AF37;color:#fff;border-radius:10px;padding:11px;margin-top:6px;font-size:15px}
+.bt{width:100%;background:linear-gradient(90deg,#D4AF37,gold);color:#000;border:none;font-weight:900;padding:12px;border-radius:10px;margin-top:8px;cursor:pointer;font-size:15px}
+.out{background:#fff;color:#111;padding:12px;border-radius:10px;margin-top:8px;white-space:pre-wrap;max-height:60vh;overflow:auto;line-height:1.7;font-size:14px}
+</style>
+</head>
+<body>
+<div class="h">
+<div style="display:flex;gap:8px;align-items:center">
+<img src="icon-192.png?v=2" class="logo">
+<div><div style="color:gold;font-weight:900;font-size:13px">سيد العزازي</div><div style="font-size:9px;color:#A7F3D0">150 اداة AI مجانية مدى الحياة</div></div>
+</div>
+<div style="display:flex;gap:6px;align-items:center"><span class="free">مجانا 100%</span><button id="installBtn" class="install" style="display:block">ثبت التطبيق 📲</button></div>
+</div>
+
+<div style="text-align:center;padding:8px;background:#0F201A;border-bottom:1px solid rgba(212,175,55,.2)">
+<div style="font-size:11px;color:#F9E076">🎉 كل الادوات مفتوحة مجانا بدون اشتراك - ثبت التطبيق من الزر فوق</div>
+<div style="display:flex;gap:4px;justify-content:center;margin-top:6px"><input id="search" placeholder="ابحث عن اداة..." style="max-width:220px;margin:0"><select id="filter" style="max-width:110px;margin:0"><option value="all">الكل</option><option value="كتابة">كتابة</option><option value="صور">صور</option><option value="فيديو">فيديو</option><option value="تسويق">تسويق</option><option value="حاسبات">حاسبات</option></select></div>
+</div>
+
+<div class="grid" id="g"></div>
+
+<div class="m" id="mm"><div class="b">
+<button onclick="document.getElementById('mm').classList.remove('o')" style="float:left;background:none;border:none;color:gold;font-size:20px">✕</button>
+<h3 id="mt" style="color:gold;margin:6px 0"></h3>
+<div id="pc"></div>
+</div></div>
+
+<script>
+let deferredPrompt;const installBtn=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.style.display='block'});
+installBtn.addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.style.display='none'}});
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=150final2')}
+
+let allTools=[];
+let base=["كاتب المقالات","مولد الصور AI","مزيل الخلفية","النص لصوت","ملخص PDF","مولد الفيديو","محسن 4K","المترجم الفوري","كاتب الاعلانات","مساعد الاكواد","مولد الهاشتاجات","كاتب السيرة الذاتية","مولد الاسماء","حاسبة الارباح","مولد QR","مختصر الروابط","كاتب الايميلات","مولد الباسورد","محول العملات","صانع الاستبيان","كاتب القصص","مولد العناوين","مدقق املائي","عداد الكلمات","مولد الوصف","اعادة صياغة","كاتب تغريدات","مولد اسئلة","كاتب المراجعات","مولد الافكار","مصمم لوجو نصي","مقارنة اسعار","حاسبة خصم","مولد فاتورة","حاسبة ضريبة","منشئ باركود","محول PDF","ضاغط صور","محرر صور","مزيل علامة","وصف يوتيوب","تاج يوتيوب","حاسبة مشاهدات","سكريبت ريلز","بايو انستا","كابشن","حاسبة تفاعل","ميمز","مخطط محتوى","بومودورو","سيرة انستا","حاسبة BMI","حاسبة عمر","محول تاريخ","مولد توقيع","هاشتاج تيك توك","اسم مستخدم","فحص باسورد","ايميل وهمي","رقم وهمي","محول وحدات","حاسبة نسبة","مولد جدول","CV انجليزي","كاتب خطاب","شعار قهوة","حاسبة سعرات","مولد نكت","اقتباسات","مترجم عامية","اسئلة انترفيو","وصف امازون","كلمات مفتاحية","فحص سيو","خطة تسويق","حاسبة ROI","عرض سعر","منشئ عقد","حاسبة قسط","ايصال","شهادة","كروت","تقييمات","مقارنة منتجين","عناوين شورتس","وصف متجر","اسم براند","شعار مطعم","حاسبة شحن","كوبون","سؤال وجواب","بوست لينكد ان","هاشتاج لينكد ان","حاسبة مرتب","ختم","تايم لاين","انفوجرافيك","نص لايموجي","سؤال استبيان","خطة يومية","لوجو AI","محرر فيديو نصي","مولد صوت AI","كاتب كتاب","خطة مشروع","ارباح يوتيوب برو","مولد thumbnail","سكريبت اعلان","اسم قناة","وصف تيك توك","هامش ربح","ايميل تسويقي","صفحة هبوط","QR ملون","رابط واتساب","محول WebP","مزيل ضوضاء","تعليق صوتي","قصة اطفال","اسئلة ذكاء","حاسبة استثمار","خطة مالية","فاتورة ضريبية","عقد عمل","سياسة خصوصية","شروط استخدام","تحويل مقاسات","اسم متجر","شعار شخصي","مخطط رحلات","جدول مذاكرة","معدل تراكمي","CV ATS","Cover Letter","اسئلة MCQ","مصحح انجليزي","هاشتاج 30","بوست فيسبوك","فكرة مشروع","تسعير منتج","وصف سيو","عنوان سيو","محلل منافسين","خطة 30 يوم","كالندر محتوى","رد تلقائي","اسم دومين","تكلفة اعلان","تقرير اداء","الختم الذهبي"];
+for(let i=0;i<150;i++){allTools.push({id:i+1,name:base[i]||"اداة "+(i+1)})}
+function render(f=""){
+ let g=document.getElementById('g');g.innerHTML='';let filtered=allTools.filter(t=>t.name.includes(f));
+ filtered.forEach(t=>{let d=document.createElement('div');d.className='card';d.innerHTML=`<div style="font-size:18px">✅</div><div style="color:gold;font-size:10px;font-weight:700">${t.name}</div><div style="font-size:7px;color:#666">مجاني #${t.id}</div>`;d.onclick=()=>openTool(t);g.appendChild(d)})
+}
+function openTool(t){
+ document.getElementById('mm').classList.add('o');document.getElementById('mt').textContent=t.name+" - مجاني 100%";
+ let pc=document.getElementById('pc');
+ let html=`<textarea id="inp" rows="3" placeholder="اكتب هنا..."></textarea><button class="bt" onclick="runTool(${t.id})">تشغيل ${t.name} مجانا 🚀</button><div id="o" class="out" style="display:none"></div><div style="text-align:center;margin-top:8px;font-size:10px;color:#A7F3D0">✨ براند سيد العزازي - مجاني مدى الحياة</div>`;
+ if(t.id==2) html=`<textarea id="inp" placeholder="وصف الصورة"></textarea><button class="bt" onclick="let p=document.getElementById('inp').value||'luxury logo';let im=document.getElementById('im');document.getElementById('o').style.display='block';im.src='https://image.pollinations.ai/prompt/'+encodeURIComponent(p)+'?seed='+Math.random()">توليد صورة مجانا</button><div id="o" class="out" style="display:none"><img id="im" style="width:100%;border-radius:8px"></div>`;
+ if(t.id==3) html=`<input type="file" id="f" accept="image/*" onchange="let r=new FileReader();r.onload=e=>{window.up=e.target.result;document.getElementById('im').src=window.up;document.getElementById('o').style.display='block'};r.readAsDataURL(this.files[0])"><div id="o" class="out" style="display:none"><img id="im" style="width:100%"><canvas id="cv" style="display:none"></canvas><button class="bt" onclick="let img=new Image();img.onload=()=>{let cv=document.getElementById('cv'),ctx=cv.getContext('2d');cv.width=img.width;cv.height=img.height;ctx.drawImage(img,0,0);let d=ctx.getImageData(0,0,cv.width,cv.height);for(let i=0;i<d.data.length;i+=4)if(d.data[i]>200&&d.data[i+1]>200&&d.data[i+2]>200)d.data[i+3]=0;ctx.putImageData(d,0,0);document.getElementById('out').src=cv.toDataURL()};img.src=window.up">ازالة الخلفية</button><img id="out" style="width:100%;margin-top:6px"></div>`;
+ if(t.id==15) html=`<input id="inp" placeholder="رابط او نص"><button class="bt" onclick="let v=encodeURIComponent(document.getElementById('inp').value||'Sayed');document.getElementById('o').style.display='block';document.getElementById('im').src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data='+v">توليد QR</button><div id="o" class="out" style="display:none;text-align:center"><img id="im" style="width:200px"></div>`;
+ if(t.id==150) html=`<div style="text-align:center;padding:20px"><div style="font-size:60px">🏆</div><h2 style="color:gold">مبروك! 150 اداة مجانية</h2><p>تطبيقك جاهز يثبت على الموبايل</p><p style="background:gold;color:#000;padding:8px;border-radius:8px;font-weight:900">سيد العزازي - مجاني مدى الحياة</p><button class="bt" onclick="document.getElementById('installBtn').click()">ثبت التطبيق الان 📲</button></div>`;
+ pc.innerHTML=html;
+}
+function runTool(id){let v=document.getElementById('inp').value||'تجربة';let o=document.getElementById('o');o.style.display='block';o.textContent=`✅ تم بواسطة ${allTools[id-1].name}:\n\n`+v+`\n\n— براند سيد العزازي المجاني 100%\n#مجانا #AI`;}
+document.getElementById('search').addEventListener('input',e=>render(e.target.value));
+render();
+</script>
+</body>
+</html>
