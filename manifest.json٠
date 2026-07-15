@@ -1,0 +1,14 @@
+{
+  "name": "سيد العزازي PRO 01009450493 - رفع ملفات + تثبيت v14",
+  "short_name": "العزازي PRO",
+  "description": "150 أداة - رفع ملفات حقيقي - واتساب 01009450493 - تثبيت شغال v14",
+  "start_url": "./index.html?v=14",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#040D08",
+  "theme_color": "#0A4D3C",
+  "icons": [
+    {"src": "icon-192.png","sizes": "192x192","type": "image/png","purpose": "any maskable"},
+    {"src": "icon-512.png","sizes": "512x512","type": "image/png","purpose": "any maskable"}
+  ]
+}
