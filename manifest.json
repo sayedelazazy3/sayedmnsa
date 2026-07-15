@@ -1,0 +1,30 @@
+{
+  "name": "سيد العزازي - 150 اداة AI مجانية",
+  "short_name": "العزازي AI",
+  "description": "150 اداة ذكاء اصطناعي مجانية مع رفع صور وفيديو وملفات - مجانا مدى الحياة",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#040D08",
+  "theme_color": "#0A4D3C",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
