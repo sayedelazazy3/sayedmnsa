@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>سيد العزازي PRO 01009450493 - 150 أداة حقيقية</title>
-<link rel="manifest" href="manifest.json?v=10"><meta name="theme-color" content="#0A4D3C">
+<link rel="manifest" href="manifest.json?v=11"><meta name="theme-color" content="#0A4D3C">
 <meta name="apple-mobile-web-app-capable" content="yes"><link rel="icon" href="icon-512.png"><link rel="apple-touch-icon" href="icon-192.png">
 <style>
 *{box-sizing:border-box;font-family:'Cairo',Tahoma,sans-serif}body{margin:0;background:#040D08;color:#fff;overflow-x:hidden}
@@ -83,7 +83,7 @@ showInstall();setTimeout(showInstall,400);setTimeout(showInstall,1200);
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;showInstall();installBtn.textContent='ثبت الآن 📲';console.log('install ready');});
 installBtn.addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();try{let c=await deferredPrompt.userChoice;console.log(c);if(c.outcome==='accepted')installBtn.style.display='none';deferredPrompt=null;}catch(e){document.getElementById('helpBox').classList.add('o');}}else{document.getElementById('helpBox').classList.add('o');}});
 function testInstall(){if(deferredPrompt){deferredPrompt.prompt();}else{alert('لو زر التثبيت مش بيظهر:\nأندرويد: دوس ⋮ > تثبيت التطبيق\nآيفون: مشاركة > إضافة للشاشة الرئيسية');}}
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=10').then(r=>console.log('SW v10 ok')).catch(()=>{});}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=11').then(r=>console.log('SW v10 ok')).catch(()=>{});}
 function copyCash(){let n=PHONE_LOCAL;if(navigator.clipboard){navigator.clipboard.writeText(n).then(()=>alert('✅ نسخت رقم فودافون كاش وواتساب:\n'+n+'\n\nجرب الواتساب - رابط حقيقي ✅'));}else{prompt('انسخ:',n);}}
 let useCount={};try{useCount=JSON.parse(localStorage.getItem('useCount')||'{}');}catch(e){}
 function canUse(id){let p=localStorage.getItem('isPro');let exp=localStorage.getItem('proExpiry');if(p==='lifetime')return true;if(p==='month'&&exp){if(new Date()<new Date(exp))return true;else{localStorage.removeItem('isPro');localStorage.removeItem('proExpiry');}}return (useCount[id]||0)<3;}
